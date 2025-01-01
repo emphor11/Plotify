@@ -1,56 +1,77 @@
-
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  background-color: #f4f4f9;
+  background: linear-gradient(120deg, #f4f4f9, #e6e9f0);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-
 
 .App {
   text-align: center;
   margin: 20px;
-  padding: 40px; 
-  max-width: 1400px; 
+  padding: 40px;
+  max-width: 1400px;
   width: 100%;
-  background-color: #fff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  background: linear-gradient(145deg, #ffffff, #e8e8e8);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  animation: fadeIn 1.5s ease-in-out;
 }
-
 
 h1 {
   color: #333;
-  font-size: 36px; 
+  font-size: 38px;
   margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #4b79a1, #283e51);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 
 .plot-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 30px; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
-
 .plot-container .react-plotly-graph {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, #f4f4f9, #ffffff);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   height: 450px;
 }
 
+.plot-container .react-plotly-graph:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 
 @media (max-width: 900px) {
   .plot-container {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
